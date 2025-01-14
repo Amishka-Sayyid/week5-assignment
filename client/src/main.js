@@ -109,17 +109,17 @@ const galleries = {
   ],
 };
 
-//buttons from JAE
+//buttons from JAE (DOM)
 const galleryContainer = document.getElementById("galleryContainer");
-const imageViewer = document.getElementById("imageViewer");
-const viewerImage = document.getElementById("viewerImage");
+const popupContainer = document.getElementById("popupContainer");
+const popupImage = document.getElementById("popupImage");
 const prevButton = document.getElementById("prevButton");
 const nextButton = document.getElementById("nextButton");
 
 let currentGallery = [];
 let currentIndex = 0;
 
-//loop
+//category thumbnails
 Object.keys(galleries).forEach((category) => {
   const thumbnail = document.createElement("div");
   thumbnail.className = "gallery-thumbnail";
@@ -132,22 +132,36 @@ Object.keys(galleries).forEach((category) => {
   galleryContainer.appendChild(thumbnail);
 });
 
-//each category
+//each category gallery
 function openGallery(category) {
   currentGallery = galleries[category];
   currentIndex = 0;
-  updateViewerImage();
-  imageViewer.classList.add("visible");
+  showPopupImage();
+}
+
+//popup image
+function showPopupImage() {
+  const image = currentGallery[currentIndex];
+  popupImage.src = image.src;
+  popupImage.alt = image.alt;
+  popupContainer.classList.add("show");
 }
 
 //buttons
 prevButton.addEventListener("click", () => {
   currentIndex =
     (currentIndex - 1 + currentGallery.length) % currentGallery.length;
-  updateViewerImage();
+  showPopupImage();
 });
 
 nextButton.addEventListener("click", () => {
   currentIndex = (currentIndex + 1) % currentGallery.length;
-  updateViewerImage();
+  showPopupImage();
+});
+
+//close image
+popupContainer.addEventListener("click", (e) => {
+  if (e.target === imageViewer) {
+    imageViewer.classList.remove("show");
+  }
 });
