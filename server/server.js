@@ -1,0 +1,53 @@
+//Import packages
+import express from "express";
+import cors from "cors";
+import pg from "pg";
+import dotenv from "dotenv";
+
+//Initiliase express
+const app = express();
+
+//Telling server to use JSON
+app.use(express.json());
+
+//Start cors
+app.use(cors());
+
+//configure env file
+dotenv.config();
+
+//hosting server on a port
+
+app.listen(8080, function () {
+  console.log("Server running in port 8080");
+});
+
+//setting up root route in server
+
+app.get("/", function (request, response) {
+  response.json({ message: "This is the root route" });
+});
+
+//creating db pool
+const dbConnectionString = process.env.DATABASE_URL;
+export const db = new pg.Pool({
+  connectionString: dbConnectionString,
+});
+
+//adding a route to READ from the database. Need to change table name
+
+app.get("/messages", async (req, res) => {
+  const query = await db.query(`SELECT * FROM database`);
+  await res.json(result.rows);
+});
+
+//adding a route to CREATE NEW   data in the databse. Table name and data input needs to be updated
+
+app.post("/new-data", async (req, res) => {
+  const data = req.body.formValues;
+  const query = await db.query(
+    `INSERT INTO table_name (name1, age, gender) VALUES ($1, $2, $3)`,
+    [name1, age, gender]
+  );
+  await res.json(query.rows);
+});
