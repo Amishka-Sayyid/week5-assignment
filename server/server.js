@@ -46,8 +46,9 @@ app.get("/messages", async (req, res) => {
 
 app.post("/new-data", async (req, res) => {
   const data = req.body.formValues;
+  console.log("This is the req.body", req.body);
   const query = await db.query(
-    `INSERT INTO table_name (user_name, message) VALUES ($1, $2)`,
+    `INSERT INTO formData (user_name, message) VALUES ($1, $2)`,
     [user_name, message]
   );
   await res.json(query.rows);
