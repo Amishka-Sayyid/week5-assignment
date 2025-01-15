@@ -29,6 +29,7 @@ const messageContainer = document.getElementById("testimonialSection");
 const fetchDataArray = [];
 
 async function fetchFormData() {
+  //here i'll later changed to render url
   const response = await fetch("http://localhost:8080/messages", {
     method: "GET",
     headers: {
