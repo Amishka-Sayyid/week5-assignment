@@ -38,7 +38,7 @@ export const db = new pg.Pool({
 //adding a route to READ from the database.
 
 app.get("/messages", async (req, res) => {
-  const query = await db.query(`SELECT * FROM formData`);
+  const result = await db.query(`SELECT * FROM formData`);
   await res.json(result.rows);
 });
 
@@ -46,9 +46,10 @@ app.get("/messages", async (req, res) => {
 
 app.post("/new-data", async (req, res) => {
   const data = req.body.formValues;
+  console.log("This is the req.body", req.body);
   const query = await db.query(
-    `INSERT INTO table_name (name, message) VALUES ($1, $2)`,
-    [name, message]
+    `INSERT INTO formData (user_name, message) VALUES ($1, $2)`,
+    [user_name, message]
   );
   await res.json(query.rows);
 });
