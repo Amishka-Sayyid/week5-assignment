@@ -11,7 +11,7 @@ function handleSubmitMessageForm(event) {
   const formData = new FormData(messageForm);
   const formValues = Object.fromEntries(formData);
 
-  fetch("/new-data ", {
+  fetch("http://localhost:8080/new-data ", {
     method: "POST",
     headers: {
       "Content-type": "application/json",
@@ -29,7 +29,7 @@ const messageContainer = document.getElementById("testimonialSection");
 const fetchDataArray = [];
 
 async function fetchFormData() {
-  const response = await fetch("server url/ example messages", {
+  const response = await fetch("http://localhost:8080/messages", {
     method: "GET",
     headers: {
       "Content-type": "application/json",
@@ -68,7 +68,7 @@ async function creatingElements() {
     messageInput.className = "message";
 
     const userName = document.createElement("p");
-    userName.textContent = singledata.name;
+    userName.textContent = singledata.user_name;
 
     userDiv.appendChild(messageInput);
     userDiv.appendChild(userName);
