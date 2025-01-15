@@ -16,10 +16,11 @@ app.use(cors());
 //configure env file
 dotenv.config();
 
-//hosting server on a port
+//hosting server on a dynamic port using environment variable, or default to 8080
 
-app.listen(8080, function () {
-  console.log("Server running in port 8080");
+const port = process.env.PORT || 8080;
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
 });
 
 //setting up root route in server
