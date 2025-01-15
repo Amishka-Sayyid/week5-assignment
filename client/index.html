@@ -3,16 +3,83 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <script src="./main.js" defer></script>
+    <script src="./form.js" defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script type="module" src="./src/main.js" defer></script>
     <script type="module" src="./src/form.js" defer></script>
     <link rel="stylesheet" href="./src/style.css" />
     <link rel="stylesheet" href="./src/mediaQueries.css" />
-    <title>photography portfolio</title>
+    <title>Photography Portfolio</title>
   </head>
+
+
   <body>
-    <header>headerrrrrrr</header>
-    <main></main>
-    <footer></footer>
+    <header>Photography Portfolio</header>
+    <nav>
+      
+        <div class="navbar">
+          <a href="#">Logo</a>
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+          <a href="#">Register</a>
+
+        </div>
+    </nav>
+
+    <p>We are a newly branded photography company, providing HD high-quality images,
+       perfect for capturing memories and themes that bring you joy.</p>
+
+    <div id="imagecategoryname">
+      <h2>Image Category Name</h2>
+  <nav>
+    Foods
+    Mountains 
+    Sports 
+    Animals
+  </nav>
+ </div>
+
+<h3>Image gallery</h3>
+ <div id="galleries">
+  
+ </div>
+      
+  
+    <main>
+      <div id="testimonials">
+<h3>Testimonials</h3>
+<p>Their products are amazing </p>
+<p>They made great photos for my meal website</p>
+<p>My mountain hiking images were amazing with this company, I could not have asked for more</p>
+    </div>
+
+    <form action="./post">
+<label for= "name">Name:</label>
+<input type="text" id="name" name="name" placeholder="Please enter your name">
+<label for= "message">Message:</label>
+<input type="text" id="message" name="message" placeholder="Please enter your message">
+<input type="submit" value="submit">
+    </form>
+
+    <p>
+      Company Address: 001 Artistic Lane, UK
+      Contact No. +44012345
+      Email: Photography@gmail.com
+    </p>
+
+
+    </main>
+  
+    <footer>
+<img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="github icon"> 
+<img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="youtube icon">
+                       <p class="footerinfo">
+  For any further information, please contact us by email address or by phone at Photography Portfolio
+                          </p>
+                       <p class="copyright">
+                        © 2025 </p>
+    </footer>
   </body>
 </html>
