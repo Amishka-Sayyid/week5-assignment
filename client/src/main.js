@@ -1,27 +1,30 @@
-import "./style.css";
-import "./mediaQueries.css";
+//import "./style.css";
+//import "./mediaQueries.css";
 
 const galleries = {
   Animals: [
     {
-      src: "./animals/deer.jpg",
+      src: "./pictures/animals/deer.jpg",
       alt: "a picture of a red deer in the woods",
     },
     {
-      src: "./animals/elephant.jpg",
+      src: "./pictures/animals/elephant.jpg",
       alt: "a picture of an elephant in the forest",
     },
     {
-      src: "./animals/european-shorthair-cat.jpg",
+      src: "./pictures/animals/european-shorthair-cat.jpg",
       alt: "a picture of a european shorthair cat",
     },
-    { src: "./animals/fox.jpg", alt: "an image of a fox taken during winter" },
     {
-      src: "./animals/parrot-yellow-macaw.jpg",
+      src: "./pictures/animals/fox.jpg",
+      alt: "an image of a fox taken during winter",
+    },
+    {
+      src: "./pictures/animals/parrot-yellow-macau.jpg",
       alt: "a beautiful yellow macau parrot",
     },
     {
-      src: "./animals/dalmatian-dog.jpg",
+      src: "./pictures/animals/dalmatian-dog.jpg",
       alt: "a picture of a dalmatian dog pet playing with falling leaves on a path of a park during autumn.",
     },
   ],
@@ -79,32 +82,28 @@ const galleries = {
   ],
   Sports: [
     {
-      src: "https://i.dailymail.co.uk/i/pix/2013/01/15/article-2262779-16EA2920000005DC-791_1024x615_large.jpg",
+      src: "./pictures/sports/article-2262779-16EA2920000005DC-791_1024x615_large.jpg",
       alt: "A picture of footballer making a ferocious tackle",
     },
     {
-      src: "https://sportsbyte.sunderland.ac.uk/wp-content/uploads/2023/05/1416166644.0-scaled.jpg",
+      src: "./pictures/sports/1416166644.0-scaled.jpg",
       alt: "A picture of Leon Edwards knocking out Kumaru Usman in round 5 with a headkick to win the title",
     },
     {
-      src: "https://i.pinimg.com/originals/f0/ec/57/f0ec57a192f6e8c49f7d3ca72a12003b.jpg",
-      alt: "A picure of Lebron James making a historic dunk",
+      src: "./pictures/sports/f0ec57a192f6e8c49f7d3ca72a12003b.jpg",
+      alt: "A picture of LeBron James making a historic dunk",
     },
     {
-      src: "https://cdn.britannica.com/76/187976-050-7EF67E13/Floyd-Mayweather-Jr-ducks-Philippines-Manny-Pacquiao-May-2-2015.jpg",
-      alt: "A picture of a long long awaited boxing match between two boxing legends",
+      src: "./pictures/sports/Floyd-Mayweather-Jr-ducks-Philippines-Manny-Pacquiao-May-2-2015.jpg",
+      alt: "A picture of a long awaited boxing match between two boxing legends",
     },
     {
-      src: "https://www.formula1.com/trackside-images/2024/F1_Grand_Prix_of_Bahrain/2053149561.jpg",
-      alt: "A picture off all the cars in Formula 1 at the 2024 Bahrain grand prix",
+      src: "./pictures/sports/skysports-f1-start-2023-singapore-gp_6369777.jpg",
+      alt: "A picture of all the cars in Formula 1 at the 2024 Bahrain Grand Prix",
     },
     {
-      src: "https://images.ctfassets.net/pjshm78m9jt4/94539_header/8998833fcabf3c3d53e199d6b57e0be3/importedImage94539_header",
-      alt: "Englands 2003 Rugby World Cup winning squad",
-    },
-    {
-      src: "https://e0.365dm.com/23/11/2048x1152/skysports-f1-start-2023-singapore-gp_6369777.jpg?20231123161407",
-      alt: "Formula 1 cars vying for first position on the race track",
+      src: "./pictures/sports/importedImage94539_header.jpg",
+      alt: "England's 2003 Rugby World Cup winning squad",
     },
   ],
 };
@@ -161,7 +160,7 @@ nextButton.addEventListener("click", () => {
 
 //close image
 popupContainer.addEventListener("click", (e) => {
-  if (e.target === imageViewer) {
-    imageViewer.classList.remove("show");
+  if (e.target === popupContainer) {
+    popupContainer.classList.remove("show");
   }
 });
