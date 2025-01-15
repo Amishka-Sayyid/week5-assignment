@@ -11,7 +11,7 @@ function handleSubmitMessageForm(event) {
   const formData = new FormData(messageForm);
   const formValues = Object.fromEntries(formData);
 
-  fetch(" server url/new-data ", {
+  fetch("/new-data ", {
     method: "POST",
     headers: {
       "Content-type": "application/json",
@@ -24,7 +24,7 @@ function handleSubmitMessageForm(event) {
 
 //The same way as we fetch the POST route, we also need to fetch the GET route, so we can display the data from the database on the DOM
 //select the testimonial containerexample like below
-// const messageContainer = document.getElementById("app2");
+const messageContainer = document.getElementById("testimonialsection");
 
 const fetchDataArray = [];
 
@@ -62,15 +62,13 @@ async function creatingElements() {
     const userDiv = document.createElement("div");
     userDiv.className = "UserDiv";
 
-    userDiv.style.backgroundColor = singledata.favourite_colour;
-
     const messageInput = document.createElement("p");
 
     messageInput.textContent = `" ${singledata.message}"`;
     messageInput.className = "message";
 
     const userName = document.createElement("p");
-    userName.textContent = singledata.user_name;
+    userName.textContent = singledata.name;
 
     userDiv.appendChild(messageInput);
     userDiv.appendChild(userName);
