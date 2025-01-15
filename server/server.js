@@ -35,20 +35,20 @@ export const db = new pg.Pool({
   connectionString: dbConnectionString,
 });
 
-//adding a route to READ from the database. Need to change table name
+//adding a route to READ from the database.
 
 app.get("/messages", async (req, res) => {
-  const query = await db.query(`SELECT * FROM database`);
+  const query = await db.query(`SELECT * FROM formData`);
   await res.json(result.rows);
 });
 
-//adding a route to CREATE NEW   data in the databse. Table name and data input needs to be updated
+//adding a route to CREATE NEW data in the databse.
 
 app.post("/new-data", async (req, res) => {
   const data = req.body.formValues;
   const query = await db.query(
-    `INSERT INTO table_name (name1, age, gender) VALUES ($1, $2, $3)`,
-    [name1, age, gender]
+    `INSERT INTO table_name (name, message) VALUES ($1, $2)`,
+    [name, message]
   );
   await res.json(query.rows);
 });
