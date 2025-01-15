@@ -1,5 +1,7 @@
-//import "./style.css";
-//import "./mediaQueries.css";
+import "./style.css";
+import "./mediaQueries.css";
+// Import form.js
+import "./form.js";
 
 const galleries = {
   Animals: [
