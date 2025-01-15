@@ -24,7 +24,7 @@ function handleSubmitMessageForm(event) {
 
 //The same way as we fetch the POST route, we also need to fetch the GET route, so we can display the data from the database on the DOM
 //select the testimonial containerexample like below
-const messageContainer = document.getElementById("testimonialsection");
+const messageContainer = document.getElementById("testimonialSection");
 
 const fetchDataArray = [];
 
