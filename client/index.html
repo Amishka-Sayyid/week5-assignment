@@ -8,18 +8,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script type="module" src="./src/main.js" defer></script>
     <script type="module" src="./src/form.js" defer></script>
-    <link rel="stylesheet" href="./src/style.css" />
+    <link rel="stylesheet" href="./styles.css" />
     <link rel="stylesheet" href="./src/mediaQueries.css" />
+
     <title>Photography Portfolio</title>
   </head>
 
 
   <body>
-    <header>Photography Portfolio</header>
+    <header>
+      <div class="nav1">
+     <div class="heading"> <h1>Photography Portfolio</h1> </div>
     <nav>
       
-        <div class="navbar">
-          <a href="#">Logo</a>
+        <div id="navbar">
+  
           <a href="#">Home</a>
           <a href="#">About</a>
           <a href="#">Contact</a>
@@ -27,54 +30,66 @@
 
         </div>
     </nav>
+    </div>
+</header>
 
-    <p>We are a newly branded photography company, providing HD high-quality images,
-       perfect for capturing memories and themes that bring you joy.</p>
+    
 
     <div id="imagecategoryname">
       <h2>Image Category Name</h2>
+      <div id="nav2">
   <nav>
-    Foods
-    Mountains 
-    Sports 
-    Animals
+    <button>Foods</button>
+    <button>Mountains<button>
+    <button>Sports</button>
+    <button>Animals</button>
   </nav>
+      </div>
  </div>
 
+
+<div class="imagedisplay">
 <h3>Image gallery</h3>
  <div id="galleries">
   
  </div>
+ </div>
       
   
     <main>
+      <div class="testimonialandform">
       <div id="testimonials">
 <h3>Testimonials</h3>
-<p>Their products are amazing </p>
-<p>They made great photos for my meal website</p>
-<p>My mountain hiking images were amazing with this company, I could not have asked for more</p>
+<div id=testimonialSection>
+
+</div>
     </div>
 
-    <form action="./post">
+    <form id="./messageForm">
 <label for= "name">Name:</label>
 <input type="text" id="name" name="name" placeholder="Please enter your name">
 <label for= "message">Message:</label>
 <input type="text" id="message" name="message" placeholder="Please enter your message">
 <input type="submit" value="submit">
     </form>
+    </div>
 
     <p>
       Company Address: 001 Artistic Lane, UK
-      Contact No. +44012345
-      Email: Photography@gmail.com
+      Contact No. +440123456789
+      Email: PhotographyPortfolio@gmail.com
     </p>
 
 
     </main>
   
     <footer>
+      <div id="img">
 <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="github icon"> 
 <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="youtube icon">
+                           </div>
+
+
                        <p class="footerinfo">
   For any further information, please contact us by email address or by phone at Photography Portfolio
                           </p>
