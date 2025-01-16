@@ -26,8 +26,6 @@ function handleSubmitMessageForm(event) {
 //select the testimonial containerexample like below
 const messageContainer = document.getElementById("testimonialSection");
 
-const fetchDataArray = [];
-
 async function fetchFormData() {
   //here i'll later changed to render url
   const response = await fetch("http://localhost:8080/messages", {
@@ -42,23 +40,20 @@ async function fetchFormData() {
   //log to see the data array
   console.log(data);
 
-  //fetch the data and put i
-  fetchDataArray.length = 0;
-  data.forEach(savingIntoThisObject);
-  function savingIntoThisObject(dataArraymessages) {
-    fetchDataArray.push(dataArraymessages);
-  }
+  // // limiting the number of messages to 1st 4 in array
+  // const limitedData = data.slice(0, 4);
 
-  fetchDataArray.length = 4;
-  console.log(fetchDataArray);
-
-  return fetchDataArray;
+  // Getting the last 4 messages from the data
+  const lastFourMessages = data.slice(-4);
+  return lastFourMessages;
 }
 
 async function creatingElements() {
   const SavedData = await fetchFormData();
   console.log(SavedData);
 
+  //clearing previous content
+  messageContainer.innerHTML = "";
   SavedData.forEach((singledata) => {
     const userDiv = document.createElement("div");
     userDiv.className = "UserDiv";
