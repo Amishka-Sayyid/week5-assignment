@@ -1,89 +1,134 @@
-@import url("https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css");
-@import url("https://fonts.googleapis.com/css2?family=Quintessential&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
+  font-family: "Arial", sans-serif;
 }
 
-header {
-  background-color: #2e3944;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  border-bottom: 1px solid #124e66;
-  align-items: center;
-  height: 15vh;
+/* styling for the body element */
+body {
+  background-color: #1e272e;
   color: #d3d9d4;
+  line-height: 1.6;
+  font-size: 16px;
+  overflow-x: hidden;
 }
+
+/* styling for the header */
+header {
+  background: linear-gradient(90deg, #2e3944, #124e66);
+  color: #d3d9d4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* styling for the header title */
 header h1 {
-  margin: 1rem;
   font-size: 2rem;
+  font-weight: 700;
   font-family: "Playfair Display", serif;
-  font-weight: 400;
-  font-style: italic;
 }
 
-.headerButton {
-  padding: 1rem;
-  margin: 1rem;
-  text-decoration: none;
-  font-size: 1.2rem;
-  border: 1px solid transparent;
-  cursor: pointer;
-  border-radius: 1.5rem;
-  transition: border-color 0.25s;
-  background-color: #d3d9d4;
-  text-transform: uppercase;
-}
-
-.headerButton:hover,
-.headerButton:focus {
-  border-color: #124e66;
-}
+/* styling for navigation */
 #nav {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  gap: 2rem;
+  gap: 1.5rem;
 }
+
+/* styling for navigation links */
 #nav a {
   text-decoration: none;
   color: #d3d9d4;
-}
-nav a:hover {
-  color: #748d92;
-}
-#about {
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
   align-items: center;
-  width: 100%;
-  height: 85vh;
-  margin: auto;
-}
-#about img {
-  width: 30%;
-  object-fit: cover;
-  height: 60vh;
-}
-#about p {
-  width: 30%;
-  place-content: center;
-  margin: auto;
-  height: 60vh;
+  justify-content: center;
+  height: 100%;
+  transition: background 0.3s ease;
 }
 
+/* hover effect for navigation links */
+#nav a:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* styling for the header button */
+.headerButton {
+  background: #84b8ec;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  color: #124e66;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  text-transform: uppercase;
+  white-space: nowrap;
+  margin-left: 2rem;
+}
+
+/* hover effect for the header button */
+.headerButton:hover {
+  transform: scale(1.1);
+}
+
+/* styling for the about section */
+#about {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 4rem 2rem;
+  background: #2e3944;
+}
+
+/* styling for the about image */
+#about img {
+  width: 30%;
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* styling for the about text */
+#about p {
+  width: 40%;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  text-align: center;
+}
+
+/* styling for the image category section */
+#imageCategory {
+  background: #1e272e;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* styling for the image category heading */
+#imageCategory h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  font-family: "Playfair Display", serif;
+}
+
+/* styling for the image category container */
 #imageCategory {
   min-height: 100vh;
   width: 100%;
   margin: auto;
   background-color: #2e3944;
+  border: 5px solid #124e66;
 }
+
+/* styling for the thumbnail container */
 #thumbnail {
   display: flex;
   flex-direction: row;
@@ -92,12 +137,11 @@ nav a:hover {
   margin: auto;
   width: 60%;
   height: auto;
-
   padding: 1rem;
   color: #2e3944;
 }
 
-/* Styling for gallery thumbnails */
+/* styling for gallery thumbnails */
 .gallery-thumbnail {
   cursor: pointer;
   margin: 10px;
@@ -107,112 +151,84 @@ nav a:hover {
   border-radius: 5px;
 }
 
-/* Style for the large images container */
+/* styling for large image container */
 #largeImageContainer {
+  margin-top: 2rem;
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
-  height: 80vh;
-  width: 90%;
-  margin: auto;
-}
-
-/* Styling for individual large images */
-.large-image {
-  height: 40%;
-  border-radius: 10px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* i added pop up styling */
-.popup {
-  display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #2e3944;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  z-index: 10;
-}
-
-#imageCategory h2 {
-  text-align: center;
-  font-size: 2rem;
-  font-family: Quintessential;
-  color: aliceblue;
-}
-#testimonialContainer {
-  height: 80vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
+  gap: 1rem;
   justify-content: center;
-  align-items: center;
+  flex-wrap: wrap;
 }
-#testimonials {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  min-height: 75vh;
-  border: 1px solid #124e66;
-  border-radius: 2rem;
-  place-items: center;
-  width: 90%;
+
+/* styling for large images */
+.large-image {
+  width: 45%;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
+
+/* styling for the testimonial section container */
+#testimonialContainer {
+  background: #124e66;
+  padding: 4rem 2rem;
+  color: #d3d9d4;
+  text-align: center;
+}
+
+/* styling for the testimonials heading */
 #testimonials h3 {
-  text-align: center;
-  font-family: Quintessential;
-  font-size: 1.5rem;
-  font-weight: 500;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  font-family: "Playfair Display", serif;
 }
 
-p {
-  color: #748d92;
-  line-height: 1.6;
-}
-
-.testimonialAndForm {
-  height: 80vh;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  width: 100%;
-  gap: 2rem;
-  align-items: center;
-}
-#contactDetails {
-  border-radius: 3rem;
-  width: 40%;
-  height: 60vh;
-  border: 1px solid #84979f;
-  padding: 1rem;
-  margin: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  background-color: #2e3944;
-}
-.testimonialAndForm h3,
-p {
-  text-align: center;
-  font-family: Quintessential;
-  font-size: 1.5rem;
-  font-weight: 500;
-}
-
+/* styling for the testimonial section */
 #testimonialSection {
   display: flex;
-  flex-direction: row;
+  gap: 2rem;
   justify-content: space-evenly;
-  align-content: space-evenly;
-
   flex-wrap: wrap;
-  height: 80%;
 }
+
+/* styling for individual testimonials */
+.testimonial {
+  background: #2e3944;
+  padding: 1.5rem;
+  border-radius: 15px;
+  width: 30%;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+/* hover effect for testimonials */
+.testimonial:hover {
+  transform: scale(1.05);
+}
+
+/* styling for the testimonial and form section */
+.testimonialAndForm {
+  display: flex;
+  gap: 2rem;
+  padding: 4rem 2rem;
+  justify-content: center;
+}
+
+/* styling for contact details container */
+#contactDetails {
+  width: 40%;
+  padding: 2rem;
+  background: #2e3944;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* styling for paragraphs within contact details */
+#contactDetails p {
+  margin: 1rem 0;
+  font-size: 1.1rem;
+}
+
 .UserDiv {
   height: 40%;
   width: 45%;
@@ -223,62 +239,46 @@ p {
   color: #212a31;
 }
 
+/* styling for the form container */
 #formDiv {
-  border-radius: 3rem;
   width: 40%;
-  height: 60vh;
-  border: 1px solid #84979f;
-  padding: 3rem;
-  margin: 1rem;
-  gap: 3rem;
-  place-items: center;
-  background-color: #2e3944;
+  padding: 2rem;
+  background: #124e66;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-#formDiv form {
+
+/* styling for the form elements */
+form {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  width: 70%;
+  gap: 1.5rem;
 }
 
-form input {
-  padding: 0.5rem;
-  border: 1px solid #124e66;
-  border-radius: 1rem;
-}
-
-form label {
-  font-size: 1.3rem;
-}
-
+/* styling for form input fields and buttons */
+form input,
 form button {
-  margin-top: 1rem;
-  padding: 1rem;
-  border: 1px solid #124e66;
-  border-radius: 1rem;
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #d3d9d4;
+  font-size: 1rem;
 }
 
-/* gotopbtn */
-.goToPbtn {
-  font-size: 1.3rem;
-  color: rgb(133, 131, 133);
-  border: 1px solid #124e66;
-  padding: 1rem;
-  border-radius: 4rem;
-  margin: auto;
-  position: fixed;
-  right: 20px;
-  bottom: 2rem;
-  z-index: 5;
-  text-align: center;
+/* styling for form submit button */
+form button {
+  background: #84b8ec;
+  color: #124e66;
+  font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s;
+  transition: transform 0.3s ease;
 }
-.goToPbtn:hover {
-  background-color: white;
-  transform: scale(1.1);
+
+/* hover effect for form submit button */
+form button:hover {
+  transform: scale(1.05);
 }
-/* footer */
+
+/* styling for the footer */
 footer {
   display: flex;
   flex-direction: column;
@@ -302,6 +302,39 @@ footer a {
 footer a:hover {
   color: #d3d9d4;
 }
-body i {
-  color: #124e66;
+
+footer a {
+  color: #84b8ec;
+  text-decoration: none;
+  margin: 0 1rem;
+}
+
+/* hover effect for footer links */
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* styling for the "go to top" button */
+.goToPbtn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: #124e66;
+  color: white;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* hover effect for the "go to top" button */
+.goToPbtn:hover {
+  transform: scale(1.2);
+  background-color: #0b3a4d;
 }
