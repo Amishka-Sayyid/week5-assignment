@@ -1,5 +1,6 @@
 import "./style.css";
 import "./mediaQueries.css";
+import "./form.js";
 
 // Gallery categories and images
 const galleries = {
@@ -145,3 +146,11 @@ function largeContainerRender(images) {
     largeImageContainer.appendChild(img);
   });
 }
+
+// Scroll to top button
+document.querySelector(".goToPbtn").addEventListener("click", function () {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+});
