@@ -6,94 +6,127 @@
     <script src="./main.js" defer></script>
     <script src="./form.js" defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script type="module" src="/src/main.js" defer></script>
-    <link rel="stylesheet" href="./src/style.css" />
+    <script type="module" src="./src/main.js" defer></script>
+    <script type="module" src="./src/form.js" defer></script>
+    <link rel="stylesheet" href="./styles.css" />
     <link rel="stylesheet" href="./src/mediaQueries.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
     <title>Photography Portfolio</title>
   </head>
 
-
   <body>
     <header>
-      <div class="nav1">
-     <div class="heading"> <h1>Photography Portfolio</h1> </div>
-    <nav>
-      
-        <div id="navbar">
-  
-          <a href="#">Home</a>
-          <a href="#">About</a>
-          <a href="#">Contact</a>
-          <a href="#">Register</a>
+      <h1>PHOTOGRAPHY STUDIO</h1>
 
-        </div>
-    </nav>
-    </div>
-</header>
-
-    
-
-    <div id="imagecategoryname">
-      <h2>Image Category Name</h2>
-      <div id="nav2">
-  <nav>
-    <button>Foods</button>
-    <button>Mountains<button>
-    <button>Sports</button>
-    <button>Animals</button>
-  </nav>
+      <div id="nav">
+        <a href="">HOME</a>
+        <a href="">ABOUT</a>
+        <a href="">IMAGE GALLERY</a>
+        <a href="">TESTIMONIALS</a>
+        <a href="">CONTACT</a>
       </div>
- </div>
+      <button class="headerButton">log In</button>
+    </header>
 
+    <div id="about">
+      <img
+        src="./aboutPic.webp"
+        alt="man with camera taking pic of night sky"
+      />
 
-<div class="imagedisplay">
-<h3>Image gallery</h3>
- <div id="galleries">
-  
- </div>
- </div>
-      
-  
-    <main>
-      <div class="testimonialandform">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non, ullam
+        esse, amet beatae veritatis corrupti nam dignissimos eos, dolorum
+        praesentium eveniet mollitia voluptates? Nihil, deleniti officiis
+        aliquam obcaecati quasi culpa.
+      </p>
+      <img
+        src="./aboutPic2.webp"
+        alt="female with camera taking pic of night sky"
+      />
+    </div>
+
+    <div id="imageCategory">
+      <h2>Image Category</h2>
+      <div id="thumbnail">
+        <button>Foods</button>
+        <button>Mountains</button>
+        <button>Sports</button>
+        <button>Animals</button>
+      </div>
+      <div id="largeImageContainer"></div>
+      <!-- I added pop up -->
+      <div id="popupContainer" class="popup">
+        <button id="prevButton" class="nav-btn prev-btn">❮</button>
+        <img id="popupImage" alt="Popup Image" />
+        <button id="nextButton" class="nav-btn next-btn">❯</button>
+      </div>
+    </div>
+
+    <div id="testimonialContainer">
       <div id="testimonials">
-<h3>Testimonials</h3>
-<div id=testimonialSection>
+        <h3>Testimonials</h3>
+        <div id="testimonialSection"></div>
+      </div>
+    </div>
+    <div class="testimonialAndForm">
+      <div id="contactDetails">
+        <h3></h3>
+        <p><i class="fa-solid fa-location-dot"></i> 001 Artistic Lane, UK</p>
+        <p><i class="fa-solid fa-phone"></i>+440123456789</p>
+        <p>
+          <i class="fa-solid fa-envelope"></i>
+          PhotographyPortfolio@gmail.com
+        </p>
+        <p class="footerInfo">
+          For any further information, please contact us by email address or by
+          phone at Photography Portfolio
+        </p>
+      </div>
 
-</div>
+      <div id="formDiv">
+        <h3>CONTACT US</h3>
+        <form id="./messageForm">
+          <label for="name">Name:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Please enter your name"
+          />
+          <label for="message">Message:</label>
+          <input
+            type="text"
+            id="message"
+            name="message"
+            placeholder="Please enter your message"
+          />
+          <button type="submit">submit</button>
+        </form>
+      </div>
     </div>
 
-    <form id="messageForm">
-<label for= "name">Name:</label>
-<input type="text" id="user_name" name="user_name" placeholder="Please enter your name">
-<label for= "message">Message:</label>
-<input type="text" id="message" name="message" placeholder="Please enter your message">
-<button type="submit">Send</button>
-    </form>
-    </div>
-
-    <p>
-      Company Address: 001 Artistic Lane, UK
-      Contact No. +440123456789
-      Email: PhotographyPortfolio@gmail.com
-    </p>
-
-
-    </main>
-  
+    <a class="goToPbtn" href="">
+      <i class="fa-solid fa-arrow-up"></i>
+    </a>
     <footer>
-      <div id="img">
-<img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="github icon"> 
-<img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="youtube icon">
-                           </div>
-
-
-                       <p class="footerinfo">
-  For any further information, please contact us by email address or by phone at Photography Portfolio
-                          </p>
-                       <p class="copyright">
-                        © 2025 </p>
+      <div>
+        <a href="https://github.com/Amishka-Sayyid" target="_blank">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="" target="_blank">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+        <p><i class="fa-solid fa-copyright"></i> &copy; 2024</p>
+      </div>
     </footer>
   </body>
 </html>
