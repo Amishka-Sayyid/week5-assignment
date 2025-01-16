@@ -6,4 +6,3 @@ The use of the Trello organsier siye was effective in making sure everyone knew 
 Changes occured when the idea of adding a separate media query was implemented with an additional CSS page-specific for media queries.
 
 It was important to understand git braching to use it effectively.
-
