@@ -8,6 +8,10 @@ messageForm.addEventListener("submit", handleSubmitMessageForm);
 
 function handleSubmitMessageForm(event) {
   event.preventDefault();
+
+  const submitButton = event.target.querySelector('button[type="submit"]');
+  submitButton.disabled = true;
+
   const formData = new FormData(messageForm);
   const formValues = Object.fromEntries(formData);
 
@@ -20,6 +24,15 @@ function handleSubmitMessageForm(event) {
   });
   console.log(formValues);
   alert("message sent successfully");
+
+  submitButton.disabled = false;
+  // Refreshing  page after successful form submission
+  location.reload();
+
+  if (!response.ok) {
+    console.log("Failed to send message");
+    alert("An error occurred while sending the message.");
+  }
 }
 
 //The same way as we fetch the POST route, we also need to fetch the GET route, so we can display the data from the database on the DOM
@@ -40,20 +53,16 @@ async function fetchFormData() {
   //log to see the data array
   console.log(data);
 
-  // // limiting the number of messages to 1st 4 in array
-  // const limitedData = data.slice(0, 4);
-
-  // Getting the last 4 messages from the data
   const lastFourMessages = data.slice(-4);
   return lastFourMessages;
 }
 
 async function creatingElements() {
   const SavedData = await fetchFormData();
-  console.log(SavedData);
 
   //clearing previous content
   messageContainer.innerHTML = "";
+
   SavedData.forEach((singledata) => {
     const userDiv = document.createElement("div");
     userDiv.className = "UserDiv";

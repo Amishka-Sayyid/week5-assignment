@@ -1,6 +1,5 @@
 import "./style.css";
 import "./mediaQueries.css";
-import "./form.js";
 
 // Gallery categories and images
 const galleries = {
