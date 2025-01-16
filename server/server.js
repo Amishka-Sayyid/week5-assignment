@@ -42,11 +42,12 @@ app.get("/messages", async (req, res) => {
   await res.json(result.rows);
 });
 
-//adding a route to CREATE NEW data in the databse.
+//adding a route to CREATE NEW data in the databse and extracting user_name and message from the formValues
 
 app.post("/new-data", async (req, res) => {
   const data = req.body.formValues;
   console.log("This is the req.body", req.body);
+  const { user_name, message } = data;
   const query = await db.query(
     `INSERT INTO formData (user_name, message) VALUES ($1, $2)`,
     [user_name, message]
