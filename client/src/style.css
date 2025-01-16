@@ -7,8 +7,6 @@
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
-  color: #d3d9d4;
-  background-color: #212a31;
 }
 
 header {
@@ -94,35 +92,39 @@ nav a:hover {
   margin: auto;
   width: 60%;
   height: auto;
-  background-color: #748d92;
+
   padding: 1rem;
   color: #2e3944;
 }
 
-#thumbnail button {
-  padding: 1rem;
-  font-size: 1.2rem;
-  border: 1px solid transparent;
+/* Styling for gallery thumbnails */
+.gallery-thumbnail {
   cursor: pointer;
-  border-radius: 1.5rem;
-  transition: background-color 0.25s, transform 0.3s;
-  background-color: #d3d7d8;
-  text-transform: uppercase;
-  display: inline-block;
+  margin: 10px;
+  padding: 10px;
+  background-color: #f0f0f0;
+  text-align: center;
+  border-radius: 5px;
 }
 
-#thumbnail button:hover,
-#thumbnail button:focus {
-  background-color: #124e66;
-  color: #2e3944;
-  transform: scale(1.05);
-}
-
+/* Style for the large images container */
 #largeImageContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
   height: 80vh;
-  background-color: #2e3944;
   width: 90%;
   margin: auto;
+}
+
+/* Styling for individual large images */
+.large-image {
+  height: 40%;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* i added pop up styling */
@@ -141,6 +143,7 @@ nav a:hover {
   text-align: center;
   font-size: 2rem;
   font-family: Quintessential;
+  color: aliceblue;
 }
 #testimonialContainer {
   height: 80vh;
@@ -256,7 +259,7 @@ form button {
 }
 
 /* gotopbtn */
-.goToPbBtn {
+.goToPbtn {
   font-size: 1.3rem;
   color: rgb(133, 131, 133);
   border: 1px solid #124e66;
@@ -266,13 +269,13 @@ form button {
   position: fixed;
   right: 20px;
   bottom: 2rem;
-  z-index: 2;
+  z-index: 5;
   text-align: center;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.3s;
 }
-.goToPbBtn:hover {
-  background-color: #2e3944;
+.goToPbtn:hover {
+  background-color: white;
   transform: scale(1.1);
 }
 /* footer */
