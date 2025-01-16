@@ -54,8 +54,10 @@ header h1 {
   text-decoration: none;
   color: #d3d9d4;
 }
-nav a:hover {
-  color: #748d92;
+#nav a:hover {
+  color: #6a9fa3;
+  transform: scale(1.2);
+  text-decoration: underline;
 }
 #about {
   display: flex;
@@ -75,7 +77,9 @@ nav a:hover {
   width: 30%;
   place-content: center;
   margin: auto;
-  height: 60vh;
+  color: #212a31;
+  height: auto;
+  font-size: 1.65vw;
 }
 
 #imageCategory {
@@ -122,7 +126,7 @@ nav a:hover {
 
 /* Styling for individual large images */
 .large-image {
-  height: 40%;
+  width: 30%;
   border-radius: 10px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -170,9 +174,9 @@ nav a:hover {
   font-weight: 500;
 }
 
-p {
-  color: #748d92;
-  line-height: 1.6;
+.UserDiv p {
+  color: #212a31;
+  line-height: 1.4;
 }
 
 .testimonialAndForm {
@@ -202,19 +206,22 @@ p {
   font-family: Quintessential;
   font-size: 1.5rem;
   font-weight: 500;
+  color: #d3d7d8;
 }
 
+.testimonialAndForm p {
+  font-size: 1.65vw;
+}
 #testimonialSection {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-content: space-evenly;
-
   flex-wrap: wrap;
   height: 80%;
 }
 .UserDiv {
-  height: 40%;
+  height: 45%;
   width: 45%;
   background-color: #d3d7d8;
   border-radius: 10rem;
@@ -294,14 +301,14 @@ footer {
   height: 6rem;
   z-index: 1;
 }
+
 footer a {
-  color: rgb(67, 59, 59);
-  height: 1rem;
   text-decoration: none;
 }
-footer a:hover {
+
+body i {
   color: #d3d9d4;
 }
-body i {
-  color: #124e66;
+body i:hover {
+  transform: scale(1.3);
 }
