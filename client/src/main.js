@@ -2,6 +2,7 @@ import "./style.css";
 import "./mediaQueries.css";
 import "./form.js";
 
+// Gallery categories and images
 const galleries = {
   Animals: [
     {
@@ -109,17 +110,11 @@ const galleries = {
   ],
 };
 
-//buttons from JAE (DOM)
-const galleryContainer = document.getElementById("galleryContainer");
-const popupContainer = document.getElementById("popupContainer");
-const popupImage = document.getElementById("popupImage");
-const prevButton = document.getElementById("prevButton");
-const nextButton = document.getElementById("nextButton");
+// Get references to the HTML elements
+const thumbnailContainer = document.getElementById("thumbnail");
+const largeImageContainer = document.getElementById("largeImageContainer");
 
-let currentGallery = [];
-let currentIndex = 0;
-
-//category thumbnails
+// Create thumbnails for each category
 Object.keys(galleries).forEach((category) => {
   const thumbnail = document.createElement("div");
   thumbnail.className = "gallery-thumbnail";
@@ -129,39 +124,25 @@ Object.keys(galleries).forEach((category) => {
     openGallery(category);
   });
 
-  galleryContainer.appendChild(thumbnail);
+  thumbnailContainer.appendChild(thumbnail);
 });
 
-//each category gallery
+// Function to open gallery and render images for the selected category
 function openGallery(category) {
-  currentGallery = galleries[category];
-  currentIndex = 0;
-  showPopupImage();
+  const selectedGallery = galleries[category];
+  largeContainerRender(selectedGallery);
 }
 
-//popup image
-function showPopupImage() {
-  const image = currentGallery[currentIndex];
-  popupImage.src = image.src;
-  popupImage.alt = image.alt;
-  popupContainer.classList.add("show");
+// Function to render images in the large container
+function largeContainerRender(images) {
+  largeImageContainer.innerHTML = ""; // Clear the container before adding new images
+
+  images.forEach((image) => {
+    const img = document.createElement("img");
+    img.src = image.src;
+    img.alt = image.alt;
+    img.classList.add("large-image");
+
+    largeImageContainer.appendChild(img);
+  });
 }
-
-//buttons
-prevButton.addEventListener("click", () => {
-  currentIndex =
-    (currentIndex - 1 + currentGallery.length) % currentGallery.length;
-  showPopupImage();
-});
-
-nextButton.addEventListener("click", () => {
-  currentIndex = (currentIndex + 1) % currentGallery.length;
-  showPopupImage();
-});
-
-//close image
-popupContainer.addEventListener("click", (e) => {
-  if (e.target === popupContainer) {
-    popupContainer.classList.remove("show");
-  }
-});
