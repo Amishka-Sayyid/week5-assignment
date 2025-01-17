@@ -37,11 +37,9 @@ _programming logic_
 
 🐿️ As a user on various devices, I want to view and access the images easily for an optimal viewing experience, ensuring the layout adapts based on my device’s screen size.
 
-
 ## **PROBLEM DOMAIN**
 
 "Providing an interactive platform for showcasing photography collections by category, allowing users to easily explore images, submit testimonials, and view feedback, all while seamlessly storing and displaying submissions using a backend system."
-
 
 **GROUP DETAILS**
 
