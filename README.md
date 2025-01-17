@@ -37,49 +37,19 @@ _programming logic_
 
 🐿️ As a user on various devices, I want to view and access the images easily for an optimal viewing experience, ensuring the layout adapts based on my device’s screen size.
 
----
-
-<!-- user stories ends here -->
-
----
 
 ## **PROBLEM DOMAIN**
 
 "Providing an interactive platform for showcasing photography collections by category, allowing users to easily explore images, submit testimonials, and view feedback, all while seamlessly storing and displaying submissions using a backend system."
 
----
-
-<!-- problem domain ends here -->
-
----
-
-## **WIREFRAMES**
-
-![Wireframe image](image.png)
-
----
-
-<!-- wireframe ends here -->
-
----
-
-## **TRELLO**
-
-<!-- HERE TRELLO DETAILS PLEASE -->
-
----
-
-<!--  -->
-
----
 
 **GROUP DETAILS**
 
-Collaboration was completed when the src images where sent by all team members in order for the image gallery to operate functionally.
+Collaboration was used when the source images where sent by all team members in order for the image gallery to operate functionally.
 The team had also decided on what css features to implement for an interactive and clear design.
 
-The use of the Trello organsier siye was effective in making sure everyone knew their role, and what was had already been achieved by the group, as wel as what tasks remained.
+The use of the Trello organiser site was effective in making sure everyone knew their role, and what was had already been achieved by the group, as well as what tasks remained.
 
-Changes occured when the idea of adding a separate media query was implemented with an additional CSS page-specific for media queries.
+Changes occured when the idea of adding a separate media query was implemented with an additional CSS page specific for media queries.
 
 It was important to understand git braching to use it effectively.
