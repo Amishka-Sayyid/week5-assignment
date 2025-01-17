@@ -15,7 +15,7 @@ function handleSubmitMessageForm(event) {
   const formData = new FormData(messageForm);
   const formValues = Object.fromEntries(formData);
 
-  fetch("http://localhost:8080/new-data ", {
+  fetch("https://week5-assignment.onrender.com/new-data ", {
     method: "POST",
     headers: {
       "Content-type": "application/json",
@@ -41,12 +41,15 @@ const messageContainer = document.getElementById("testimonialSection");
 
 async function fetchFormData() {
   //here i'll later changed to render url
-  const response = await fetch("http://localhost:8080/messages", {
-    method: "GET",
-    headers: {
-      "Content-type": "application/json",
-    },
-  });
+  const response = await fetch(
+    "https://week5-assignment.onrender.com/messages",
+    {
+      method: "GET",
+      headers: {
+        "Content-type": "application/json",
+      },
+    }
+  );
   // Parsing the response
   const data = await response.json();
 
